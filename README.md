@@ -44,3 +44,25 @@ Create database :
 Start REST API :
 
     $ java -jar target/hooper-0.0.1-SNAPSHOT.jar
+
+# 6. Usages
+
+    $ curl http://localhost:8080
+    
+    $ curl http://localhost:8080/user
+    
+    $ curl http://localhost:8080/user/53149b8e3004990b1af9f229
+    
+    $ curl http://localhost:8080/people/search
+    
+    $ curl http://localhost:8080/people/search/findByFirstName?name=Frodo
+    
+    $ curl http://localhost:8080/people/search/findByLastName?name=Baggins
+    
+    $ curl -i -X POST -H "Content-Type:application/json" -d "{  \"firstName\" : \"Frodo\",  \"lastName\" : \"Baggins\" }" http://localhost:8080/user
+    
+    $ curl -X PUT -H "Content-Type:application/json" -d "{ \"firstName\": \"Bilbo\", \"lastName\": \"Baggins\" }" http://localhost:8080/user/53149b8e3004990b1af9f229
+    
+    $ curl -X PATCH -H "Content-Type:application/json" -d "{ \"firstName\": \"Bilbo Jr.\" }" http://localhost:8080/user/53149b8e3004990b1af9f229
+    
+    $ curl -X DELETE http://localhost:8080/user/53149b8e3004990b1af9f229
